@@ -1,0 +1,155 @@
+    1  git status
+    2  mkdir cs131
+    3  cd cs131
+    4  echo "this is for this class" >> README.md
+    5  ls
+    6  git add .
+    7  git init
+    8  git add .
+    9  git commit -m "first commit"
+   10  git config --global user.email willis12367129@gmail.com
+   11  git config --global user.name WillN-byte
+   12  git commit -m "first commit"
+   13  git push -u origin main
+   14  git push
+   15  git remote add origin https://github.com/WillN-byte/cs131.git
+   16  git push -u origin main
+   17  git push
+   18  git push --set-upstream origin https://github.com/WillN-byte/cs131.git
+   19  git push -u origin https://github.com/WillN-byte/cs131.git
+   20  git push
+   21  git push -u origin main
+   22  git add .
+   23  git commit  -m "first commit"
+   24  git push -u origin main
+   25  ls
+   26  git status
+   27  git add README.md
+   28  git status
+   29  cat README.md
+   30  git pull
+   31  ls
+   32  git push -u origin main
+   33  echo "this is for this class" >> README.md
+   34  git add  .
+   35  git status
+   36  git commit -m "first commit"
+   37  git push -u origin main
+   38  git add remote origin https://github.com/WillN-byte/cs131.git
+   39  git remote add origin https://github.com/WillN-byte/cs131.git
+   40  git ls-remote --get-url origin
+   41  git status
+   42  ls
+   43  git add .
+   44  git status
+   45  echo "this is for this class" >> README.md
+   46  git add .
+   47  git status
+   48  git commit -m "first commit"
+   49  git remote add origin https://github.com/WillN-byte/cs131.git
+   50  git ls-files --others --exclude-standar
+   51  ls
+   52  git push -u origin main
+   53  git reset .
+   54  ls
+   55  git add .
+   56  git status
+   57  git branch
+   58  git push -u origin master
+   59  git branch
+   60  git push -u origin master
+   61  git init
+   62  echo "This is my first repo" >> README.md
+   63  ls
+   64  cd cs131
+   65  ls
+   66  git push -u origin master
+   67  mkdir ws2
+   68  cd ws2
+   69  ls
+   70  cd ..
+   71  ls
+   72  gh repo view --json id
+   73  id
+   74  ls directory/proc/
+   75  ls -sh
+   76  ls -a
+   77  ls -g
+   78  ls -l
+   79  ls -A
+   80  whoami
+   81  cd
+   82  cd cs131
+   83  lscpu
+   84  ls cpu
+   85  cd proc
+   86  cd
+   87  ls
+   88  id
+   89  ls -a
+   90  cd .profile
+   91  cd profile
+   92  cd .cache
+   93  ls
+   94  cd .
+   95  cd ..
+   96  cd proc
+   97  cd /proc
+   98  ls
+   99  cd cpuinfo
+  100  head cpuinfo
+  101  head meminfo
+  102  tail cpuinfo
+  103  cat cpuinfo
+  104  cd /etc
+  105  ls
+  106  head os-release
+  107  cd /cs131
+  108  cd ..
+  109  cd cs131
+  110  cd ..
+  111  cd
+  112  cd cs131
+  113  script ws2.txt
+  114  vim ws2.txt
+  115  rm ws2.txt
+  116  ls
+  117  head ws
+  118  cd ws2
+  119  ls
+  120  cd ..
+  121  rm ws2
+  122  rmdir ws2
+  123  mkdir ws2
+  124  cd ws2
+  125  echo "1) I did make the directory and used cd ws2 to change into it" > ws2.txt
+  126  head ws2.txt
+  127  cd ~
+  128  echo $HOME
+  129* 
+  130  echo "\n2) My home directory path is /home/william_ngo and I found out using 2 different methods: ~ and echo $HOME.\n" > ws2.txt
+  131  head ws2.txt
+  132  echo -e "1) I did make the directory and used cd ws2 to change into it\n" > ws2.txt
+  133  echo -e "2) My home directory path is /home/william_ngo and I found out using 2 different methods: ~ and echo $HOME.\n" >> ws2.txt
+  134  head ws2.txt
+  135  echo -e "3) My UID is 1002 and some groups that I belong to include 1003(william_ngo),4(adm),20(dialout),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),118(netdev),119(lxd),1000(ubuntu),and 1001(google-sudoers). I found this information out by running the command id \n" >> ws2.txt
+  136  echo -e "4) Using only ls, I was able to find that the meminfo file under the /proc/ directory contains information about memory(mem) on my server. As for the information about the CPU's on my server, it was under the cpuinfo file.\n" >> ws2.txt
+  137  echo -e "5) Using head to check the memory information file, I learned that there is a total of 976896 kB memory on my server. \n" >> ws2.txt
+  138  lscpu
+  139  echo -e "6) Using head, tail, and cat to check the cpu information file found above, I found that there are 2 processors on my server, my processor architecture name is x86_64, and the processor speed in GHz is approximately 2.20.  \n" >> ws2.txt
+  140  echo -e "7) The operating system version is 20.04.6 LTS (Focal Fossa) and I got this information from a file named os-release under /etc/ \n" >> ws2.txt
+  141  head ws2.txt
+  142  cat ws2.txt
+  143  ls
+  144  mv ws2.txt cs131/ws2
+  145  cd cs131/ws2
+  146  ls
+  147  cd
+  148  history > cmds.log
+  149  mv cmds.log cs131/ws2
+  150  cd cs131/ws2
+  151  vim ws2.txt
+  152  cat cmds.log
+  153  rm ws2.txt
+  154  script ws2.txt
+  155  history > cmds.log

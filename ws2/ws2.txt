@@ -1,0 +1,245 @@
+Script started on 2025-02-01 06:32:06+00:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="112" LINES="34"]
+
+1) I did make the directory and used cd ws2 to change into it.
+
+2) My home directory path is /home/william_ngo and I found out using ~.
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ cd[K[K~
+bash: /home/william_ngo: Is a directory
+
+3) My UID is 1002 and some groups that I belong to include 1003(william_ngo),4(adm),20(dialout),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),118(netdev),119(lxd),1000(ubuntu),and 1001(google-sudoers). I found this information out by running the command id.
+
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ id
+uid=1002(william_ngo) gid=1003(william_ngo) groups=1003(william_ngo),4(adm),20(dialout),24(cdrom),25(floppy),29(audio),30(dip),44(video),46(plugdev),118(netdev),119(lxd),1000(ubuntu),1001(google-sudoers)
+
+4) Using only ls, I was able to find that the meminfo file under the /proc/ directory contains information about memory(mem) on my server. As for the information about the CPU's on my server, it was under the cpuinfo file.
+
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ ls /proc
+[0m[01;34m1[0m     [01;34m12[0m   [01;34m20[0m    [01;34m27[0m    [01;34m326[0m  [01;34m525[0m  [01;34m81[0m   [01;34m96[0m          diskstats      key-users    [01;36mnet[0m            [01;36mthread-self[0m
+[01;34m10[0m    [01;34m120[0m  [01;34m208[0m   [01;34m2754[0m  [01;34m327[0m  [01;34m535[0m  [01;34m82[0m   [01;34m97[0m          dma            keys         pagetypeinfo   timer_list
+[01;34m100[0m   [01;34m127[0m  [01;34m2096[0m  [01;34m2766[0m  [01;34m33[0m   [01;34m547[0m  [01;34m83[0m   [01;34m98[0m          [01;34mdriver[0m         kmsg         partitions     [01;34mtty[0m
+[01;34m101[0m   [01;34m128[0m  [01;34m21[0m    [01;34m2769[0m  [01;34m34[0m   [01;34m568[0m  [01;34m84[0m   [01;34m99[0m          [01;34mdynamic_debug[0m  kpagecgroup  [01;34mpressure[0m       uptime
+[01;34m102[0m   [01;34m129[0m  [01;34m22[0m    [01;34m2770[0m  [01;34m4[0m    [01;34m574[0m  [01;34m85[0m   [01;34macpi[0m        execdomains    kpagecount   schedstat      version
+[01;34m104[0m   [01;34m13[0m   [01;34m24[0m    [01;34m2782[0m  [01;34m445[0m  [01;34m578[0m  [01;34m86[0m   bootconfig  fb             kpageflags   [01;34mscsi[0m           version_signature
+[01;34m106[0m   [01;34m130[0m  [01;34m241[0m   [01;34m29[0m    [01;34m448[0m  [01;34m579[0m  [01;34m87[0m   buddyinfo   filesystems    loadavg      [01;36mself[0m           vmallocinfo
+[01;34m107[0m   [01;34m14[0m   [01;34m2460[0m  [01;34m3[0m     [01;34m481[0m  [01;34m6[0m    [01;34m88[0m   [01;34mbus[0m         [01;34mfs[0m             locks        slabinfo       vmstat
+[01;34m1080[0m  [01;34m15[0m   [01;34m25[0m    [01;34m30[0m    [01;34m487[0m  [01;34m604[0m  [01;34m90[0m   cgroups     interrupts     mdstat       softirqs       zoneinfo
+[01;34m11[0m    [01;34m16[0m   [01;34m2525[0m  [01;34m31[0m    [01;34m490[0m  [01;34m757[0m  [01;34m92[0m   cmdline     iomem          meminfo      stat
+[01;34m1142[0m  [01;34m169[0m  [01;34m2530[0m  [01;34m32[0m    [01;34m494[0m  [01;34m758[0m  [01;34m93[0m   consoles    ioports        misc         swaps
+[01;34m1143[0m  [01;34m18[0m   [01;34m26[0m    [01;34m323[0m   [01;34m5[0m    [01;34m762[0m  [01;34m948[0m  cpuinfo     [01;34mirq[0m            modules      [01;34msys[0m
+[01;34m116[0m   [01;34m19[0m   [01;34m2672[0m  [01;34m324[0m   [01;34m507[0m  [01;34m8[0m    [01;34m949[0m  crypto      kallsyms       [01;36mmounts[0m       sysrq-trigger
+[01;34m119[0m   [01;34m2[0m    [01;34m2678[0m  [01;34m325[0m   [01;34m508[0m  [01;34m80[0m   [01;34m95[0m   devices     kcore          mtrr         [01;34msysvipc[0m
+
+
+5) Using head to check the memory information file, I learned that there is a total of 976896 kB memory on my server.   
+
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ head /proc/meminfo[1Pinfo[1Pinfo[1Pinfocinfopinfouinfo[C[C[C[1P /proc/cpuinfo[1P /proc/cpuinfo[1P /proc/cpuinfoh /proc/cpuinfoe /proc/cpuinfoa /proc/cpuinfod /proc/cpuinfo[C /proc/cpuinfo[1P/proc/cpuinfo[C[C[C[C[C[C[C[C[C[C[1Pinfo[1Pinfo[1Pinfominfoeinfominfo
+MemTotal:         976896 kB
+MemFree:          525580 kB
+MemAvailable:     641676 kB
+Buffers:            8528 kB
+Cached:           225184 kB
+SwapCached:            0 kB
+Active:           132816 kB
+Inactive:         161776 kB
+Active(anon):        892 kB
+Inactive(anon):    69176 kB
+
+
+6) Using head, tail, and cat to check the cpu information file found above, I found that there are 2 processors on my server, my processor architecture name is x86_64 (though I had to run lscpu to get this information), and the processor speed in GHz is approximately 2.20.
+
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ head /proc/cpuinfo[1Pinfo[1Pinfo[1Pinfocinfopinfouinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU @ 2.20GHz
+stepping	: 0
+microcode	: 0xffffffff
+cpu MHz		: 2200.264
+cache size	: 56320 KB
+physical id	: 0
+
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ tail /proc/cpuinfo[1P /proc/cpuinfo[1P /proc/cpuinfo[1P /proc/cpuinfo[1P /proc/cpuinfot /proc/cpuinfoa /proc/cpuinfoi /proc/cpuinfol /proc/cpuinfo
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap xsaveopt arat md_clear arch_capabilities
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa mmio_stale_data retbleed bhi
+bogomips	: 4400.52
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+
+
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ cat /proc/cpuinfo[1P /proc/cpuinfo[1P /proc/cpuinfo[1P /proc/cpuinfo[1P /proc/cpuinfoc /proc/cpuinfoa /proc/cpuinfot /proc/cpuinfo
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU @ 2.20GHz
+stepping	: 0
+microcode	: 0xffffffff
+cpu MHz		: 2200.264
+cache size	: 56320 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap xsaveopt arat md_clear arch_capabilities
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa mmio_stale_data retbleed bhi
+bogomips	: 4400.52
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 79
+model name	: Intel(R) Xeon(R) CPU @ 2.20GHz
+stepping	: 0
+microcode	: 0xffffffff
+cpu MHz		: 2200.264
+cache size	: 56320 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 1
+apicid		: 1
+initial apicid	: 1
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 13
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti ssbd ibrs ibpb stibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap xsaveopt arat md_clear arch_capabilities
+bugs		: cpu_meltdown spectre_v1 spectre_v2 spec_store_bypass l1tf mds swapgs taa mmio_stale_data retbleed bhi
+bogomips	: 4400.52
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 46 bits physical, 48 bits virtual
+power management:
+
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ lscpu
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Byte Order:                           Little Endian
+Address sizes:                        46 bits physical, 48 bits virtual
+CPU(s):                               2
+On-line CPU(s) list:                  0,1
+Thread(s) per core:                   2
+Core(s) per socket:                   1
+Socket(s):                            1
+NUMA node(s):                         1
+Vendor ID:                            GenuineIntel
+CPU family:                           6
+Model:                                79
+Model name:                           Intel(R) Xeon(R) CPU @ 2.20GHz
+Stepping:                             0
+CPU MHz:                              2200.264
+BogoMIPS:                             4400.52
+Hypervisor vendor:                    KVM
+Virtualization type:                  full
+L1d cache:                            32 KiB
+L1i cache:                            32 KiB
+L2 cache:                             256 KiB
+L3 cache:                             55 MiB
+NUMA node0 CPU(s):                    0,1
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Mitigation; PTE Inversion
+Vulnerability Mds:                    Mitigation; Clear CPU buffers; SMT Host state unknown
+Vulnerability Meltdown:               Mitigation; PTI
+Vulnerability Mmio stale data:        Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unkn
+                                      own
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Mitigation; IBRS
+Vulnerability Spec rstack overflow:   Not affected
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl and seccomp
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; IBRS; IBPB conditional; STIBP conditional; RSB filling; PBRSB-
+                                      eIBRS Not affected; BHI SW loop, KVM SW loop
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Mitigation; Clear CPU buffers; SMT Host state unknown
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 cl
+                                      flush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc re
+                                      p_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3
+                                       fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c rdrand
+                                       hypervisor lahf_lm abm 3dnowprefetch invpcid_single pti ssbd ibrs ibpb st
+                                      ibp fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed ad
+                                      x smap xsaveopt arat md_clear arch_capabilities
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ ls /etc
+[0m[01;34mNetworkManager[0m                 fstab               mailcap                  [01;34mrcS.d[0m
+[01;34mPackageKit[0m                     fuse.conf           mailcap.order            [01;36mresolv.conf[0m
+[01;34mX11[0m                            gai.conf            manpath.config           [01;36mrmt[0m
+adduser.conf                   google_instance_id  [01;34mmdadm[0m                    rpc
+[01;34malternatives[0m                   [01;34mgroff[0m               mime.types               rsyslog.conf
+[01;34mapparmor[0m                       group               mke2fs.conf              [01;34mrsyslog.d[0m
+[01;34mapparmor.d[0m                     group-              [01;34mmodprobe.d[0m               screenrc
+[01;34mapport[0m                         [01;34mgrub.d[0m              modules                  [01;34msecurity[0m
+[01;34mapt[0m                            gshadow             [01;34mmodules-load.d[0m           [01;34mselinux[0m
+at.deny                        gshadow-            [01;36mmtab[0m                     services
+bash.bashrc                    [01;34mgss[0m                 [01;34mmultipath[0m                shadow
+bash_completion                hdparm.conf         multipath.conf           shadow-
+[01;34mbash_completion.d[0m              host.conf           nanorc                   shells
+bindresvport.blacklist         hostname            [01;34mnetplan[0m                  [01;34mskel[0m
+[01;34mbinfmt.d[0m                       hosts               [01;34mnetwork[0m                  [01;34msos[0m
+boto.cfg                       hosts.allow         [01;34mnetworkd-dispatcher[0m      [01;34mssh[0m
+[01;34mbyobu[0m                          hosts.deny          networks                 [01;34mssl[0m
+[01;34mca-certificates[0m                [01;34minit.d[0m              [01;34mnewt[0m                     subgid
+ca-certificates.conf           [01;34minitramfs-tools[0m     nsswitch.conf            subgid-
+ca-certificates.conf.dpkg-old  inputrc             [01;34mnvme[0m                     subuid
+[01;34mcalendar[0m                       [01;34miproute2[0m            [01;34mopt[0m                      subuid-
+[01;34mchrony[0m                         [01;34miscsi[0m               [01;36mos-release[0m               sudoers
+[01;34mcloud[0m                          issue               overlayroot.conf         [01;34msudoers.d[0m
+[01;34mconsole-setup[0m                  issue.net           overlayroot.local.conf   sysctl.conf
+[01;34mcron.d[0m                         [01;34mkernel[0m              pam.conf                 [01;34msysctl.d[0m
+[01;34mcron.daily[0m                     kernel-img.conf     [01;34mpam.d[0m                    [01;34msystemd[0m
+[01;34mcron.hourly[0m                    [01;34mlandscape[0m           passwd                   [01;34mterminfo[0m
+[01;34mcron.monthly[0m                   ld.so.cache         passwd-                  timezone
+[01;34mcron.weekly[0m                    ld.so.conf          [01;34mperl[0m                     [01;34mtmpfiles.d[0m
+crontab                        [01;34mld.so.conf.d[0m        [01;34mpm[0m                       [01;34mubuntu-advantage[0m
+[01;34mcryptsetup-initramfs[0m           [01;34mldap[0m                [01;34mpolkit-1[0m                 ucf.conf
+crypttab                       legal               [01;34mpollinate[0m                [01;34mudev[0m
+[01;34mdbus-1[0m                         libaudit.conf       popularity-contest.conf  [01;34mufw[0m
+[01;34mdconf[0m                          locale.alias        [01;34mppp[0m                      [01;34mupdate-manager[0m
+debconf.conf                   locale.gen          profile                  [01;34mupdate-motd.d[0m
+debian_version                 [01;36mlocaltime[0m           [01;34mprofile.d[0m                [01;34mupdate-notifier[0m
+[01;34mdefault[0m                        [01;34mlogcheck[0m            protocols                [01;34mvim[0m
+deluser.conf                   login.defs          [01;34mpython3[0m                  [01;34mvmware-tools[0m
+[01;34mdepmod.d[0m                       logrotate.conf      [01;34mpython3.8[0m                [01;36mvtrgb[0m
+[01;34mdhcp[0m                           [01;34mlogrotate.d[0m         [01;34mrc0.d[0m                    wgetrc
+[01;34mdpkg[0m                           lsb-release         [01;34mrc1.d[0m                    xattr.conf
+e2scrub.conf                   ltrace.conf         [01;34mrc2.d[0m                    [01;34mxdg[0m
+ec2_version                    [01;34mlvm[0m                 [01;34mrc3.d[0m                    zsh_command_not_found
+environment                    machine-id          [01;34mrc4.d[0m
+ethertypes                     magic               [01;34mrc5.d[0m
+[01;34mfonts[0m                          magic.mime          [01;34mrc6.d[0m
+
+
+7) The operating system version is 20.04.6 LTS (Focal Fossa) and I got this information from a file named os-release under /etc/
+
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ ls /etc[1P /etc[1P /etcc /etca /etct /etc[C[C[C[C/c[1Pc[C/os-release
+NAME="Ubuntu"
+VERSION="20.04.6 LTS (Focal Fossa)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 20.04.6 LTS"
+VERSION_ID="20.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=focal
+UBUNTU_CODENAME=focal
+]0;william_ngo@cs131: ~/cs131/ws2[01;32mwilliam_ngo@cs131[00m:[01;34m~/cs131/ws2[00m$ exit
+exit
+
+Script done on 2025-02-01 06:39:05+00:00 [COMMAND_EXIT_CODE="0"]
