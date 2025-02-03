@@ -1,3 +1,1 @@
-this is for this class
-this is for this class
-this is for this class
+This is all the project for my class for processing big data
