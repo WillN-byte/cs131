@@ -1,0 +1,45 @@
+
+  352  apt install python3-pip
+  353  sudo apt-get install python3-pip
+  354  pip install gdown
+  355  gdown 1fc3saVu2GtG3Rft3zI-VOOsZhaqcSyn3
+  356  /home/william_ngo/.local/bin/gdown 1fc3saVu2GtG3Rft3zI-VOOsZhaqcSyn3
+  357  ls
+  358  cd cs131
+  359  ls
+  360  mkdir ws3
+  361  cd
+  362  head 2019=01-h1.csv
+  363  head 2019-01-h1.csv
+  364  awk -F, '$3 ~ /2019-01-02*/' 2019-01-h1.csv
+  365  head 2019-01-h1.csv
+  366  cut -d, -f2,8 2019-01-h1.csv | awk -F, '$1 ~ /^2019-01-02*$/'| sort | uniq -c
+  367  cut -d, -f2,8 2019-01-h1.csv | awk -F, '$1 ~ /^2019-01-02*/'| sort | uniq -c
+  368  cut -d, -f2,8 2019-01-h1.csv | awk -F, '$1 ~ /^2019-01-02/'| sort | uniq -c
+  369  cut -d, -f2,8 2019-01-h1.csv
+  370  cut -d, -f2,8 2019-01-h1.csv | awk -F, '$1 ~ /^2019-01-02/'
+  371  cut -d, -f2,8 2019-01-h1.csv | awk -F, '$1 ~ /2019-01-02/'
+  372  cut -d, -f2,8 2019-01-h1.csv | awk -F, '$1 ~ /2019-01-02/'| sort | uniq -c
+  373  cut -d, -f2,8 2019-01-h1.csv | awk -F, '$1 ~ /*2019-01-02/'| sort | uniq -c
+  374  awk -F, '$1 ~ /2019-01-02/' 2019-01-h1.csv| cut -d, f8 | sort | uniq -c
+  375  awk -F, '$2 ~ /2019-01-02/' 2019-01-h1.csv| cut -d, f8 | sort | uniq -c
+  376  awk -F, '$2 ~ /2019-01-02/' 2019-01-h1.csv | cut -d, f8 | sort | uniq -c
+  377  awk -F, '$2 ~ /2019-01-02/' 2019-01-h1.csv | cut -d, -f8 | sort | uniq -c
+  378  awk -F, '$2 ~ /2019-01-02/' 2019-01-h1.csv | cut -d, -f8 | sort | uniq -c | sort
+
+
+
+
+After testing the options availible to me, below is the final lines that I came up up to get teh results I wanted.
+
+ 
+  379  awk -F, '$2 ~ /2019-01-02/' 2019-01-h1.csv | cut -d, -f8 | sort | uniq -c | sort -nr | head -n 3
+  380  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f8 | sort | uniq -c | sort -nr | head -n 3
+  381  script ws3.txt
+  382  vim ws3.txt
+  383  move ws3.txt /cs131/ws3
+  384  mv ws3.txt /cs131/ws3
+  385  mv ws3.txt cs131/ws3
+  386  ls
+  387  head 2019-01-h1.csv
+  388  history > cmds.log
