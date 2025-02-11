@@ -1,6 +1,26 @@
 Script started on 2025-02-11 22:25:33+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="91" LINES="29"]
+
+1a) This is the result after running l
+
+drwxrwxr-x 2 william_ngo william_ngo 4096 Feb 11 22:27 FARE
+-rw-rw-r-- 1 william_ngo william_ngo 1448 Feb 11 22:36 cmds.log
+-rw-rw-r-- 1 william_ngo william_ngo 1067 Feb 11 22:59 a1.txt
+
+1b) This is the result are running w
+
+      4      29     195
+
+2c) The means are:
+
+151.0 to 239.0 >> 6.64492
+163.0 to 229.0 >> 7.0501
+
+2d) The highest total amount paid by customers who were picked up on January 10, 2019 is 99.2.
+
 ]0;william_ngo@cs131: ~[01;32mwilliam_ngo@cs131[00m:[01;34m~[00m$ exitawk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort -nr | head -n 1
 99.2
+
+2e) Among the rides with three or more customers, this are the 10 most popular dropoff locations in the dataset.
 
 ]0;william_ngo@cs131: ~[00m$ script >> a1.txtawk -F, '$4 >= 3' 2019-01-h1.csv | cut -d, -f9 | sort | uniq -c | sort -nr |  head -n 10
   19897 236.0
