@@ -1,0 +1,21 @@
+Script started on 2025-02-11 22:25:33+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="91" LINES="29"]
+]0;william_ngo@cs131: ~[01;32mwilliam_ngo@cs131[00m:[01;34m~[00m$ exitawk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort -nr | head -n 1
+99.2
+
+]0;william_ngo@cs131: ~[00m$ script >> a1.txtawk -F, '$4 >= 3' 2019-01-h1.csv | cut -d, -f9 | sort | uniq -c | sort -nr |  head -n 10
+  19897 236.0
+  18013 161.0
+  16686 237.0
+  16556 230.0
+  14324 170.0
+  13964 48.0
+  13902 162.0
+  13472 142.0
+  12852 239.0
+  12194 141.0
+
+
+]0;william_ngo@cs131: ~[01;32mwilliam_ngo@cs131[00m:[01;34m~[00m$ exit
+exit
+
+Script done on 2025-02-11 22:26:27+00:00 [COMMAND_EXIT_CODE="0"]
