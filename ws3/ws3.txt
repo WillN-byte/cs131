@@ -5,18 +5,20 @@ Task 1: Sort the pickup location IDs in order to find the most popular pickup lo
 
 The 3 most popular locations on that day has IDs of 161.0, 132.0, and 186.0.
 
-]0;william_ngo@cs131: ~awk -F, '$2 ~ /2019-01-02/' 2019-01-h1.csv | cut -d, -f8 | sort | uniq -c | sort -nr | head -n 3]
+]0;william_ngo@cs131: ~cut -d, -f2,8 2019-01-h1.csv | grep '2019-01-02' | cut -d, -f2 | sort | uniq -c |sort -r | head -n 3
+]
    8555 161.0
    8145 132.0
    8122 186.0
 
-^[]0;william_ngo@cs131: ~^G^[awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f8 | sort | uniq -c | sort -nr | head -n 3^M]
+^[]0;william_ngo@cs131: ~^G^[cut -d, -f2,8 2019-01-h1.csv | grep '2019-01-10' | cut -d, -f2 | sort | uniq -c |sort -r | head -n 3^M]
 
 Task 2: Sort the pickup location IDs in order to find the most popular pickup locations on January 2nd, 2019. Identify the top 3 locations.
 
 The 3 most popular locations on that day has IDs of 237.0, 236.0, and 161.0.
 
-
+
+
   13693 237.0
   13486 236.0
   12922 161.0
