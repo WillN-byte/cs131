@@ -30,11 +30,12 @@
 
 
 
-After testing the options availible to me, below is the final lines that I came up up to get teh results I wanted.
+After testing the options available to me, below are the final lines that I came up with to get the results I wanted.
+EDIT: I updated the things to not use awk anymore
 
  
-  379  awk -F, '$2 ~ /2019-01-02/' 2019-01-h1.csv | cut -d, -f8 | sort | uniq -c | sort -nr | head -n 3
-  380  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f8 | sort | uniq -c | sort -nr | head -n 3
+  379  cut -d, -f2,8 2019-01-h1.csv | grep '2019-01-02' | cut -d, -f2 | sort | uniq -c |sort -r | head -n 3
+  380  cut -d, -f2,8 2019-01-h1.csv | grep '2019-01-10' | cut -d, -f2 | sort | uniq -c |sort -r | head -n 3
   381  script ws3.txt
   382  vim ws3.txt
   383  move ws3.txt /cs131/ws3
