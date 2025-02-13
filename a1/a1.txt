@@ -17,12 +17,12 @@ drwxrwxr-x 2 william_ngo william_ngo 4096 Feb 11 22:27 FARE
 
 2d) The highest total amount paid by customers who were picked up on January 10, 2019 is 99.2.
 
-]0;william_ngo@cs131: ~[01;32mwilliam_ngo@cs131[00m:[01;34m~[00m$ exitawk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort -nr | head -n 1
+]0;william_ngo@cs131: ~[01;32mwilliam_ngo@cs131[00m:[01;34m~[00m$ exitcut -d, -f2,11 2019-01-h1.csv | grep 2019-01-10 | cut -d, -f2 | sort -r | head -n 1
 99.2
 
 2e) Among the rides with three or more customers, this are the 10 most popular dropoff locations in the dataset.
 
-]0;william_ngo@cs131: ~[00m$ script >> a1.txtawk -F, '$4 >= 3' 2019-01-h1.csv | cut -d, -f9 | sort | uniq -c | sort -nr |  head -n 10
+]0;william_ngo@cs131: ~[00m$ script >> a1.txtcut -d, -f4,9 2019-01-h1.csv | grep -E '[3-9].0,' | cut -d, -f2 | sort | uniq -c | sort -r | head -n 10
   19897 236.0
   18013 161.0
   16686 237.0
