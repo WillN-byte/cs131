@@ -12,7 +12,7 @@ drwxrwxr-x 2 william_ngo william_ngo 4096 Feb 11 22:27 FARE
 
 2c) The means are:
 
-151.0 to 239.0 >> 6.64492
+151.0 to 239.0 >> 6.6449
 163.0 to 229.0 >> 7.0501
 
 2d) The highest total amount paid by customers who were picked up on January 10, 2019 is 99.2.
