@@ -8,10 +8,9 @@
 
 This is for 2a,b,c
 
-  507  awk '{sum += $1} END {count = NR; print sum/count}' 151.0-239.0.txt > a1.txt
-  508  awk '{sum += $1} END {count = NR; print sum/count}' 163.0-229.0.txt >> a1.txt
+  507  echo "scale=4; $(cut -d, -f1 151.0-239.0.txt | paste -sd+ | bc) / $(wc -l < 151.0-239.0.txt)" | bc > a1.txt
+  508  echo "scale=4; $(cut -d, -f1 163.0-229.0.txt | paste -sd+ | bc) / $(wc -l < 163.0-229.0.txt)" | bc >> a1.txt
   509  head a1.txt
-  510  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort 
   511  ~
   512  cd ~
 
