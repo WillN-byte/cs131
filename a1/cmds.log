@@ -8,34 +8,28 @@
 
 This is for 2a,b,c
 
-  507  awk '{sum += $1} END {count = NR; print sum/count}' 151.0-239.0.txt > a1.txt
-  508  awk '{sum += $1} END {count = NR; print sum/count}' 163.0-229.0.txt >> a1.txt
+  507  echo "scale=4; $(cut -d, -f1 151.0-239.0.txt | paste -sd+ | bc) / $(wc -l < 151.0-239.0.txt)" | bc > a1.txt
+  508  echo "scale=4; $(cut -d, -f1 163.0-229.0.txt | paste -sd+ | bc) / $(wc -l < 163.0-229.0.txt)" | bc >> a1.txt
   509  head a1.txt
-  510  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort 
   511  ~
   512  cd ~
 
 This is for 2d
 
-  513  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort 
+  513  cut -d, -f2,11 2019-01-h1.csv | grep 2019-01-10 | cut -d, -f2 | sort -r | head -n 1
   514  cd cs131/a1/FARE
   515  echo 99.2 >> a1.txt
 
 This is for 2e
 
-  522  awk -F, '$4 >= 3' 2019-01-h1.csv | cut -d, -f9 | sort | uniq -c | sort -nr |  head -n 10
+  522  cut -d, -f4,9 2019-01-h1.csv | grep -E '[3-9].0,' | cut -d, -f2 | sort | uniq -c | sort -r | head -n 10
   523  script >> a1.txt
   524  l
   525  cd cs131/a1
   526  cd FARE
   527  ls
   528  cd ~
-  529  script cs131/a1/FARE/a1.txt
-  530  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort 
-  531  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort -nr |head -n 1
-  532  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort -n |head -n 1
-  533  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort |head -n 1
-  534  awk -F, '$2 ~ /2019-01-10/' 2019-01-h1.csv | cut -d, -f11 | sort -r | head -n 1
+  ...
   535  script cs131/a1/FARE/a1.txt
   536  ls
   537  cat a1.txt
