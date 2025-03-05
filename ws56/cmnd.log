@@ -1,0 +1,61 @@
+
+  971  mkdir ws56
+  972  touch ws56.txt
+  973  cd 
+  974  ls
+  975  head 2019-1-h1.csv
+  976  head 2019-01-h1.csv
+  977  grep '^[2.0]' 2019-01-h1.csv
+  978  grep '^[2.0],' 2019-01-h1.csv
+  979  sed
+
+This was just me testing out sed
+ 
+  980  sed '2.0,' 2019-01-h1.csv
+  981  sed '/2.0,/' 2019-01-h1.csv
+  982  sed -e '/^2.0/' 2019-01-h1.csv
+  983  sed -en '/^2.0/' 2019-01-h1.csv
+  984  sed -e '/^2.0/' 2019-01-h1.csv
+  985  sed '/^2.0/' 2019-01-h1.csv
+  986  sed -n '/^2.0/' 2019-01-h1.csv
+  987  sed -E '/^2.0/' 2019-01-h1.csv
+  988  sed -n '/^2.0/' 2019-01-h1.csv
+  989  sed -n /^2.0/ 2019-01-h1.csv
+  990  sed -n '/^2.0/ p' 2019-01-h1.csv
+
+This is what I came up with for Task 1 Part 1
+
+  991  sed -n '/^2.0/ p' 2019-01-h1.csv > vendor2.csv
+
+  992  sed 's/://; s/"//; s/-//' 2019-01-h1.csv
+  993  sed 's/\://; s/\"//; s/\-//' 2019-01-h1.csv
+
+This is what I came up with for Task 1 Part 2
+
+  994  sed 's/://g; s/"//g; s/-//g' 2019-01-h1.csv > no-seperators.csv
+
+  995  sed 's/.[0-9]*//' no-separators.csv
+  996  sed 's/\.[0-9]*//' no-separators.csv
+  997  sed 's/\.[0-9]*//g' no-separators.csv
+
+This is what I came up with for Task 1 Part 3
+
+  998  sed 's/\.[0-9]*//g' no-separators.csv > no-fractions.csv
+
+  999  ls
+ 1000  wc vendor2.csv >> ./cs131/ws56/ws56.txt
+ 1001  head -10 no-separators.csv >> ./cs131/ws56/ws56.txt
+ 1002  head -10 no-fractions.csv >> ./cs131/ws56/ws56.txt
+ 1003  wc vendor2.csv
+ 1004  head -10 no-separators.csv
+ 1005  head -10 no-fractions.csv
+ 1006  cut -d',' -f14,17 2019-01-h1.csv | head -5
+ 1007  cut -d',' -f14,17 2019-01-h1.csv | awk -F',' '$2 >= 10.0 {print $1}' | sort -nr | uniq -c | head -20
+ 1008  cut -d',' -f14,17 2019-01-h1.csv | awk -F',' '$2 >= 10.0 {print $1}' | sort | uniq -c | sort -nr | head -20
+
+Lastly, this is what I came up with for Task 2
+
+ 1009  cut -d',' -f14,17 2019-01-h1.csv | awk -F',' '$2 >= 10.0 {print $1}' | sort | uniq -c | sort -nr | head -20 >> ./cs131/ws56/ws56.txt
+
+
+ 1010  history > cmnd.log
