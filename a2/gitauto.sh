@@ -1,37 +1,50 @@
 #!/bin/bash
 
-# This is the commit message
-commit=$1
+current_dir=$(pwd)
 
-# This is keeping track of how many files/folders were actually added
-adds=0
-
-# If there are less than 2 arguments provided, there is something wrong
-if [ $# -lt 2 ]; then
-	echo "Not enough arguments were provided"
-	exit 1
+# Check if repository path and time are provided
+if [ -z "$1" ]; then
+  echo "Please provide the path to your Git repository."
+  exit 1
 fi
 
-# skip the first element as it is a comment for commiting
-shift
+if [ -z "$2" ]; then
+  echo "Please provide the time to check (in 24-hour format, e.g., 13:01)."
+  exit 1
+fi
 
-# for every other argument, check if that file/folder exist and add it
-# Also, keep a track fo how may valid files/folders were added
-for arg in "$@"; do
-	if [ -d "$arg" ]; then
-		git add $arg
-		((adds++))1
-		echo "$arg was added"
-	else
-		echo "$arg not found"
-	fi
-done
+# Assign the parameters to variables
+repo_dir="$1"
+check_time="$2"
 
-# If no valid files/folders were added then do no commit or push
-if [ $adds -gt 0 ]; then
-	git commit -m "$commit"
-	git push
-	echo "Changes has been pushed to GitHub"
-else
-	echo "No changes were pushed because all files were invalid"
-fi	
+# Extract the hour and minute from the check_time
+hour=$(echo "$check_time" | cut -d':' -f1)
+minute=$(echo "$check_time" | cut -d':' -f2)
+
+# Validate the repository path
+if [ ! -d "$repo_dir/.git" ]; then
+  echo "The directory $repo_dir is not a valid Git repository."
+  exit 1
+fi
+
+# Function to check for uncommitted changes
+check_for_changes() {
+  date=$(date)
+  git_output=$(cd "$repo_dir" && git status)
+  if echo "$git_output" | grep -q "Changes not staged for commit"; then
+    echo "You have uncommitted changes in $repo_dir on $date!" >> $current_dir/log.txt 
+  elif echo "$git_output" | grep -q "Changes to be committed"; then
+    echo "You have staged changes in $repo_dir on $date!" >> $current_dir/log.txt
+  else
+    echo "No uncommitted changes in $repo_dir on $date." >> $current_dir/log.txt
+  fi
+}
+
+check_for_changes "$repo_dir"
+
+# Add the cron job
+cron_time="$minute $hour * * *"
+echo "$cron_time $current_dir/gitauto.sh $repo_dir $check_time" | crontab -
+
+echo "Cron job has been scheduled to check the repository at $check_time."
+
