@@ -13,4 +13,16 @@ Now, you could easily run `git status`, but what if you are working on multiple 
    ```bash
    chmod +x gitauto.sh
 
+2. **Then, while gitauto.sh is in your current directory, run the following:
+   **Conditions: Hours must be between 0 and 23, and minutes must be between 0 and 59
+   
+   ```bash
+   ./gitauto.sh \<absolute\_path\_to\_repo> \<hours:minute>
 
+Example:
+```bash
+   ./gitauto.sh ~/cs131 19:31
+   Cron job has been scheduled to check the repository at 19:31.
+
+   cat log.txt
+   No uncommitted changes in /home/william_ngo/cs131 on Wed Mar 12 02\:30:18 UTC 2025."
