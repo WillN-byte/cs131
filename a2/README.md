@@ -17,7 +17,7 @@ Now, you could easily run `git status`, but what if you are working on multiple 
    **Conditions: Hours must be between 0 and 23, and minutes must be between 0 and 59
    
    ```bash
-   ./gitauto.sh \<absolute\_path\_to\_repo> \<hours:minute>
+   ./gitauto.sh <absolute_path_to_repo> <hours:minute>
 
 Example:
 ```bash
