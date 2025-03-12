@@ -1,6 +1,6 @@
 #!/bin/bash
 
-current_dir=$(pwd)
+current_dir=$(dirname "$(readlink -f "$0")")
 
 # Check if repository path and time are provided
 if [ -z "$1" ]; then
