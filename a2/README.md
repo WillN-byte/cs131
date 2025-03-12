@@ -11,7 +11,7 @@ Now, you could easily run `git status`, but what if you are working on multiple 
 1. **Give permission to run this shell script** by doing:
 
    ```bash
-   chmod +x gitauto.sh
+   chmod a+x gitauto.sh
 
 2. **Then, while gitauto.sh is in your current directory, run the following:
    **Conditions: Hours must be between 0 and 23, and minutes must be between 0 and 59
