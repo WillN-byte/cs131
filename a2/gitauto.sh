@@ -31,15 +31,17 @@ fi
 check_for_changes() {
   date=$(date)
   git_output=$(cd "$repo_dir" && git status)
+
   if echo "$git_output" | grep -q "Changes not staged for commit"; then
-    echo "You have uncommitted changes in $repo_dir on $date!" >> $current_dir/log.txt 
+  	echo "You have uncommitted changes in $repo_dir on $date!" >> $current_dir/log.txt
   elif echo "$git_output" | grep -q "Changes to be committed"; then
-    echo "You have staged changes in $repo_dir on $date!" >> $current_dir/log.txt
+  	echo "You have staged changes in $repo_dir on $date!" >> $current_dir/log.txt
+  elif echo "$git_output" | grep -q "Untracked files"; then
+  	echo "You have untracked files in $repo_dir on $date!" >> $current_dir/log.txt
   else
-    echo "No uncommitted changes in $repo_dir on $date." >> $current_dir/log.txt
+  	echo "Everything is up to date in $repo_dir on $date." >> $current_dir/log.txt
   fi
 }
-
 check_for_changes "$repo_dir"
 
 # Add the cron job
