@@ -53,9 +53,8 @@ This is what I came up with for Task 1 Part 3
  1007  cut -d',' -f14,17 2019-01-h1.csv | awk -F',' '$2 >= 10.0 {print $1}' | sort -nr | uniq -c | head -20
  1008  cut -d',' -f14,17 2019-01-h1.csv | awk -F',' '$2 >= 10.0 {print $1}' | sort | uniq -c | sort -nr | head -20
 
-Lastly, this is what I came up with for Task 2
+Lastly, this is what I came up with for Task 2 Part 1 and 2
 
- 1009  cut -d',' -f14,17 2019-01-h1.csv | awk -F',' '$2 >= 10.0 {print $1}' | sort | uniq -c | sort -nr | head -20 >> ./cs131/ws56/ws56.txt
+ 1009 awk -F, '$17 > 10.0 {count[$14]++} END {for (val in count) printval, count[val]}' 2019-01-h1.csv >> ./ws56/ws56.txt
 
-
- 1010  history > cmnd.log
+ 1010 awk -F, '{count[$14]++} END {for (val in count) print val, count[val]}' 2019-01-h1.csv | sort -k2 -nr | head -20 >> ./ws56/ws56.txt 
