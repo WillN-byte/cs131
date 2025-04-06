@@ -1,0 +1,48 @@
+
+
+Task 1-3 are not printed as per the task spec
+
+Task 4: Below is the information of each student in the data file
+
+All Students:
+
+Name: Alice
+Total Score: 253
+Average Score: 84.3333
+Status: PASS
+
+Name: Bob
+Total Score: 246
+Average Score: 82
+Status: PASS
+
+Name: Charlie
+Total Score: 270
+Average Score: 90
+Status: PASS
+
+Name: David
+Total Score: 195
+Average Score: 65
+Status: FAIL
+
+Name: Eve
+Total Score: 265
+Average Score: 88.3333
+Status: PASS
+
+
+Task 5: THis tells us information on the top and lowest scorer respectively
+
+Top Scorer
+Name: Charlie
+Total Score: 270
+Average Score: 90
+Status: PASS
+
+Lowest Scorer
+Name: David
+Total Score: 195
+Average Score: 65
+Status: FAIL
+

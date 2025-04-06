@@ -1,0 +1,43 @@
+ 1433  ls
+
+# Not much to see here as all the testing is being done within the awk files
+ 1434  cd a3
+ 1435  ls
+ 1436  cat grades.csv
+ 1437  vim grader.awk
+ 1438  awk -f grader.awk grades.csv
+ 1439  vim grader.awk
+ 1440  awk -f grader.awk grades.csv
+ 1441  vim grader.awk
+ 1442  awk -f grader.awk grades.csv
+ 1443  vim grader.awk
+ 1444  awk -f grader.awk grades.csv
+ 1445  vim grader.awk
+ 1446  cat grader.awk
+ 1447  vim grader.awk
+ 1448  awk -f grader.awk grades.csv
+ 1449  vim grader.awk
+ 1450  awk -f grader.awk grades.csv
+ 1451  vim grader.awk
+ 1452  awk -f grader.awk grades.csv
+ 1453  vim grader.awk
+ 1454  awk -f grader.awk grades.csv
+ 1455  vim grader.awk
+ 1456  awk -f grader.awk grades.csv
+ 1457  vim grader.awk
+ 1458  awk -f grader.awk grades.csv
+ 1459  vim grader.awk
+ 1460  awk -f grader.awk grades.csv
+ 1461  vim grader.awk
+ 1462  awk -f grader.awk grades.csv
+ 1463  vim grader.awk
+ 1464  awk -f grader.awk grades.csv
+ 1465  vim grader.awk
+
+# After finally getting it to work at the end, I pushed the result to a3.txt
+ 1466  awk -f grader.awk grades.csv > a3.txt
+
+#I decided to add some comments to both this file and grader.awk
+ 1467  vim grader.awk
+ 1468  vim a3.txt
+ 1469  history > cmnd.log
