@@ -14,6 +14,9 @@
  1450  sudo apt install unzip
  1451  unzip spotify-and-youtube.zip
  1452  ls
+
+# We decided only to remove the column using sed here because, during viewing, we found that decription had lots of newlines that could cause us issues down the line when using Spark
+
  1453  cut --complement -d',' -f5 Spotify_Youtube.csv > clean_Spotify_Youtube.csv
  1454  ls
  1455  history > cmds.log
