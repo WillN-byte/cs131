@@ -1,0 +1,19 @@
+ 1437  cd cs131
+ 1438  pip install kaggle
+ 1439  vim ~/.kaggle/kaggle.json
+ 1440  mkdir -p ~/.kaggle
+ 1441  ls
+ 1442  ls -a
+ 1443  touch kaggle.json
+ 1444  vim kaggle.json
+ 1445  mv kaggle.json ~/.kaggle/
+ 1446  chmod 600 ~/.kaggle/kaggle.json
+ 1447  kaggle datasets download -d "salvatorerastelli/spotify-and-youtube"
+ 1448  ls
+ 1449  unzip spotify-and-youtube.zip
+ 1450  sudo apt install unzip
+ 1451  unzip spotify-and-youtube.zip
+ 1452  ls
+ 1453  cut --complement -d',' -f5 Spotify_Youtube.csv > clean_Spotify_Youtube.csv
+ 1454  ls
+ 1455  history > cmds.log
